@@ -1,0 +1,53 @@
+﻿<Window x:Class="ilerinesneProjeOdevi.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ilerinesneProjeOdevi"
+        mc:Ignorable="d"
+        Title="Araç Bilgi" Height="250" Width="680" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.27*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" >
+            <StackPanel Margin="10,0,0,0" >
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Label Content="Marka:" Width="50" Height="25"/>
+                    <TextBox x:Name="TxtMarka" Width="80" Height="25"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Label Content="Model:" Width="50" Height="25"/>
+                    <TextBox x:Name="TxtModel" Width="80" Height="25"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Label Content="Ü.Yılı:" Width="50" Height="25"/>
+                    <DatePicker x:Name="DpYıl" Width="80" Height="25"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Label Content="Renk:" Width="50" Height="25"/>
+                    <TextBox x:Name="TxtRenk" Width="80" Height="25"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Label Content="Fiyat:" Width="50" Height="25"/>
+                    <TextBox x:Name="TxtFiyat" Width="80" Height="25"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Label Content="Yakıt:" Width="50" Height="25"/>
+                    <RadioButton x:Name="RbBenzin" Content="Benzin" Height="15"/>
+                    <RadioButton x:Name="RbDizel" Content="Dizel" Height="15" Margin="5"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="BtnKaydet" Content=" Kaydet / Düzenle" Width="100" Height="35" Margin="5" Click="BtnKaydet_Click"/>
+                <Button x:Name="BtnSil" Content="Sil" Width="100" Height="35" Margin="5" Click="BtnSil_Click" />
+                <TextBlock x:Name="TbYazi" Width="100" Height="25"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Column="0">
+            <ListBox Height="130"  Margin="5" x:Name="LbTasitlar" DisplayMemberPath="MarkaModel" SelectionChanged="LbTasitlar_SelectionChanged"/>
+            <WrapPanel Height="100" Margin="5" x:Name="WpButonlar"/>
+        </StackPanel>
+    </Grid>
+</Window>
